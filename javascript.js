@@ -1,0 +1,1 @@
+console.log("Hello World! It's time for Rock Paper Scissors!")
