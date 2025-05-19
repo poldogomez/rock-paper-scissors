@@ -1,7 +1,7 @@
 console.log("Hello World! It's time for Rock Paper Scissors!")
  
 // Logic to get computer choice
-// 1 = "rock", 2 = "paper", 3 = "scissors"
+// Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
 
 function getComputerChoice() {
@@ -25,4 +25,10 @@ function getComputerChoice() {
 // Prompt user to input choice "rock", "paper", or "scissors"
 // Store result in humanChoice
 
+function getHumanChoice() {
+    let humanChoice = prompt('Type "rock" or "paper" or "scissors.');
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
 console.log(getComputerChoice());
