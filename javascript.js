@@ -1,5 +1,9 @@
 console.log("Hello World! It's time for Rock Paper Scissors!")
  
+// Declare player and computer score variables
+let computerScore = 0;
+let humanScore = 0;
+
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
