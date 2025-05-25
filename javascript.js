@@ -36,8 +36,8 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
+// console.log(getHumanChoice());
+// console.log(getComputerChoice());
 
 // Logic to play a single round.
 // Get human and computer choices.
@@ -62,7 +62,18 @@ console.log(getComputerChoice());
 //          declare computer winner, 
 //          increment computerScore by 1.
 //      Else if computerChoice = 'paper', 
-//      declare human winner, 
-//      increment humanScore by 1.
+//          declare human winner, 
+//          increment humanScore by 1.
 
+function playRound(humanChoice, computerChoice) {
+  console.log(humanChoice + ' * ' + computerChoice);
+  if (humanChoice == computerChoice) {
+    console.log("Tie game!")
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
