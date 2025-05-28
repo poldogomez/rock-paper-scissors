@@ -32,7 +32,7 @@ function getComputerChoice() {
 // Store result in humanChoice
 
 function getHumanChoice() {
-    let humanChoice = prompt('Type "rock" or "paper" or "scissors.');
+    let humanChoice = prompt('Round ' + roundCounter + '. Type "rock" or "paper" or "scissors.');
     return humanChoice.toLowerCase(); // converts user text to all lower case
 }
 
@@ -75,26 +75,26 @@ function playGame() {
       } else if (humanChoice === 'rock') {
             if (computerChoice === 'paper') {
                 ++computerScore;
-                console.log("Computer wins! Paper beats rock.");
+                console.log("Paper beats rock. Computer wins!");
             } else if (computerChoice === 'scissors') {
                 ++humanScore;
-                console.log("You win! Rock beats scissors.");
+                console.log("Rock beats scissors. You win!");
             }   
       } else if (humanChoice === 'paper') {
             if (computerChoice === 'scissors') {
                 ++computerScore;
-                console.log("Computer wins! Scissors beats paper.");
+                console.log("Scissors beats paper. Computer wins!");
             } else if (computerChoice === 'rock') {
                 ++humanScore;
-                console.log("You win! Paper beats rock.");
+                console.log("Paper beats rock. You win!");
             }   
       } else if (humanChoice === 'scissors') {
             if (computerChoice === 'rock') {
                 ++computerScore;
-                console.log("Computer wins! Rock beats scissors.");
+                console.log("Rock beats scissors. Computer wins!");
             } else if (computerChoice === 'paper') {
                 ++humanScore;
-                console.log("You win! Scissors beats paper.");
+                console.log("Scissors beats paper. You win!");
             } 
       }
       console.log('Score - You: ' + humanScore + ', Computer: ' + computerScore);
@@ -119,9 +119,9 @@ while (roundCounter < 5) {
 
 // Check to see who has the highest score then declare the winner.
 if (humanScore > computerScore) {
-    console.log('You win!');
+    console.log('You win the game!');
 } else if (computerScore > humanScore) {
-    console.log('The computer wins.');
+    console.log('The computer wins the game.');
 } else {
     console.log('Tie game!');
 }  
