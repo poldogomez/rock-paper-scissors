@@ -36,6 +36,8 @@ function getHumanChoice() {
     return humanChoice.toLowerCase(); // converts user text to all lower case
 }
 
+function playGame() {
+    
 // Logic to play a single round.
 // Get human and computer choices.
 // If humanChoice = computerChoice, 
@@ -96,8 +98,14 @@ function playRound(humanChoice, computerChoice) {
   }
   console.log('Score - You: ' + humanScore + ', Computer: ' + computerScore);
 }  
-
+// These consts and playRound will be called from within playGame
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+
+}
+
+// To play 5 rounds, loop playGame until humanScore OR computerScore = 5
+// Check to see who has the highest score then declare the winner.
+
