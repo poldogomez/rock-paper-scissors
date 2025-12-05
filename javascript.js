@@ -83,10 +83,10 @@ function playGame() {
 
 
 let roundCounter = 0; // roundCounter displayed in playRound.
-while (roundCounter < 5) {
+do  {
     roundCounter++; // this is the round counter
     playGame();
-} 
+} while (humanScore < 5 && computerScore < 5)
 
 // Check to see who has the highest score then declare the winner.
 if (humanScore > computerScore) {
