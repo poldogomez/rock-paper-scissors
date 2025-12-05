@@ -36,35 +36,6 @@ function getHumanChoice() {
     return humanChoice.toLowerCase(); // converts user text to all lower case
 }
 
-// Logic to play a single round.
-// Get human and computer choices.
-// If humanChoice = computerChoice, 
-//      declare a tie and do not increment score.
-
-// Else if humanChoice = 'rock' 
-//      If computerChoice = 'paper', 
-//          declare computer winner, 
-//          increment computerScore by 1.
-//      Else if computerChoice = 'scissors', 
-//          declare human winner, 
-//          increment humanScore by 1.
-
-// Else if humanChoice = 'paper'
-//      If computerChoice = 'scissors', 
-//          declare computer winner, 
-//          increment computreScore by 1.
-//      Else if computerChoice = 'rock', 
-//          declare human winner, 
-//          increment humanScore by 1.
-
-// Else if humanChoice = 'scissors'
-//      If computerChoice = 'rock', 
-//          declare computer winner, 
-//          increment computerScore by 1.
-//      Else if computerChoice = 'paper', 
-//          declare human winner, 
-//          increment humanScore by 1.
-
 function playGame() {
 
     function playRound(humanChoice, computerChoice) {
