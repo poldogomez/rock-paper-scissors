@@ -79,8 +79,7 @@ function playGame() {
 
 }
 
-// To play 5 rounds, loop playGame 5x
-
+// First player to score 5 points wins
 
 let roundCounter = 0; // roundCounter displayed in playRound.
 do  {
@@ -91,8 +90,6 @@ do  {
 // Check to see who has the highest score then declare the winner.
 if (humanScore > computerScore) {
     console.log('You win the game!');
-} else if (computerScore > humanScore) {
-    console.log('The computer wins the game.');
 } else {
-    console.log('Tie game!');
-}  
+    console.log('The computer wins the game.');
+};  
