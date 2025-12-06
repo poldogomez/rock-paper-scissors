@@ -1,5 +1,14 @@
-console.log("Hello World! It's time for Rock Paper Scissors!")
- 
+// console.log("Hello World! It's time for Rock Paper Scissors!")
+
+const gameContainer = document.querySelector("#container");
+
+const welcome = document.createElement("p");
+
+welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
+
+gameContainer.appendChild(welcome);
+
+
 // Declare player and computer score variables
 let computerScore = 0;
 let humanScore = 0;
