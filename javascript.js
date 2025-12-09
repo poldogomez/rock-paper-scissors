@@ -1,13 +1,18 @@
 // console.log("Hello World! It's time for Rock Paper Scissors!")
-
 const banner = document.querySelector("#banner");
 
 const welcome = document.createElement("p");
-
-welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
-
+    welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
 banner.appendChild(welcome);
 
+// add listeners for container with buttons
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
 
 // Declare player and computer score variables
 let computerScore = 0;
