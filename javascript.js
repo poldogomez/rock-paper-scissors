@@ -1,24 +1,24 @@
-// console.log("Hello World! It's time for Rock Paper Scissors!")
+// Declare player and computer score variables
+let computerScore = 0;
+let humanScore = 0;
+
+
+// create banner to show round and keep score
 const banner = document.querySelector("#banner");
 
 const welcome = document.createElement("p");
     welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
 banner.appendChild(welcome);
 
-// add listeners for container with buttons
+// add listeners for container with buttons for humanChoice
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    alert(button.id);
+    let humanChoice = button.id;
+    alert("You chose "+humanChoice+"!");
   });
 });
-
-// Declare player and computer score variables
-let computerScore = 0;
-let humanScore = 0;
-
-// console.log(computerScore + " " + humanScore);
 
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
@@ -45,10 +45,10 @@ function getComputerChoice() {
 // Prompt user to input choice "rock", "paper", or "scissors"
 // Store result in humanChoice
 
-function getHumanChoice() {
-    let humanChoice = prompt('Round ' + roundCounter + '. Type "rock" or "paper" or "scissors.');
-    return humanChoice.toLowerCase(); // converts user text to all lower case
-}
+// function getHumanChoice() {
+    // let humanChoice = prompt('Round ' + roundCounter + '. Type "rock" or "paper" or "scissors.');
+    // return humanChoice.toLowerCase(); // converts user text to all lower case
+// }
 
 // function playGame() {
 
