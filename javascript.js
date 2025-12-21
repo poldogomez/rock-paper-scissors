@@ -1,7 +1,7 @@
 // Declare player and computer score variables
 let computerScore = 0;
 let humanScore = 0;
-
+let humanChoice = "";
 
 // create banner to show round and keep score
 const banner = document.querySelector("#banner");
@@ -11,14 +11,22 @@ const welcome = document.createElement("p");
 banner.appendChild(welcome);
 
 // add listeners for container with buttons for humanChoice
-const buttons = document.querySelectorAll("button");
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+  alert(rock.id);
+  return humanChoice = rock.id
+});
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    let humanChoice = button.id;
-    alert("You chose "+humanChoice+"!");
-    return humanChoice;
-  });
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+  alert(paper.id);
+  return humanChoice = paper.id
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+  alert(scissors.id);
+  return humanChoice = scissors.id
 });
 
 // Logic to get computer choice
@@ -79,9 +87,9 @@ function playGame() {
     }  
 // 
     // These consts and playRound will be called from within playGame
-    // const humanSelection = getHumanChoice();
+    // const humanSelection = humanChoice;
     const computerSelection = getComputerChoice();
-// 
+
     playRound(humanChoice, computerSelection);
 // 
 }
