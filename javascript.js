@@ -1,7 +1,6 @@
 // Declare player and computer score variables
 let computerScore = 0;
 let humanScore = 0;
-let humanChoice = "";
 
 // create banner to show round and keep score
 const banner = document.querySelector("#banner");
@@ -9,25 +8,6 @@ const banner = document.querySelector("#banner");
 const welcome = document.createElement("p");
     welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
 banner.appendChild(welcome);
-
-// add listeners for container with buttons for humanChoice
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => {
-  alert(rock.id);
-  return humanChoice = rock.id
-});
-
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => {
-  alert(paper.id);
-  return humanChoice = paper.id
-});
-
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => {
-  alert(scissors.id);
-  return humanChoice = scissors.id
-});
 
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
@@ -85,7 +65,7 @@ function playGame() {
       }
       console.log('Score - You: ' + humanScore + ', Computer: ' + computerScore);
     }  
-// 
+ 
     // These consts and playRound will be called from within playGame
     // const humanSelection = humanChoice;
     const computerSelection = getComputerChoice();
@@ -94,13 +74,24 @@ function playGame() {
 // 
 }
 
+// add listeners for container with buttons for humanChoice
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    alert('you: ' + button.id);
+    alert('computer: ' + getComputerChoice());
+    // call function that plays game
+    });
+});
+
 // First player to score 5 points wins
 
 let roundCounter = 0; // roundCounter displayed in playRound.
-do  {
-    roundCounter++; // this is the round counter
-    playGame();
-} while (humanScore < 5 && computerScore < 5)
+//do  {
+//    roundCounter++; // this is the round counter
+//    playGame();
+//} while (humanScore < 5 && computerScore < 5)
 
 // Check to see who has the highest score then declare the winner.
 if (humanScore > computerScore) {
