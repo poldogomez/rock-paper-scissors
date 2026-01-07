@@ -31,7 +31,7 @@ function getComputerChoice() {
 }
 
 
-function playGame() {
+//function playGame() {
 // 
     function playRound(humanChoice, computerChoice) {
       console.log('*** Round ' + roundCounter + ' ***'); // see roundCounter in loop after playRound
@@ -68,20 +68,22 @@ function playGame() {
  
     // These consts and playRound will be called from within playGame
     // const humanSelection = humanChoice;
-    const computerSelection = getComputerChoice();
+    // const computerSelection = getComputerChoice();
 
-    playRound(humanChoice, computerSelection);
+//    playRound(humanChoice, computerSelection);
 // 
-}
+// }
 
 // add listeners for container with buttons for humanChoice
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    alert('you: ' + button.id);
-    alert('computer: ' + getComputerChoice());
+    let humanChoice = button.id;
+    let computerChoice = getComputerChoice();
+    alert('you: ' + humanChoice + ' | computer: ' + computerChoice);
     // call function that plays game
+    playRound(humanChoice, computerChoice);
     });
 });
 
