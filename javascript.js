@@ -1,13 +1,18 @@
 // Declare player and computer score variables
 let computerScore = 0;
 let humanScore = 0;
+let roundCounter = 1; // roundCounter displayed in playRound.
 
 // create banner to show round and keep score
 const banner = document.querySelector("#banner");
 
-const gameMessage = document.createElement("p");
-    gameMessage.textContent = "Hello World! It's time for Rock Paper Scissors!";
-banner.appendChild(gameMessage);
+const displayRound = document.createElement("p");
+    displayRound.textContent = "Hello World! It's time for Rock Paper Scissors!";
+banner.appendChild(displayRound);
+
+const displayChoices = document.createElement("p");
+const displayRoundWinner = document.createElement("p");
+const displayScore = document.createElement("p");
 
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
@@ -34,38 +39,49 @@ function getComputerChoice() {
 //function playGame() {
 // 
     function playRound(humanChoice, computerChoice) {
-      banner.removeChild(gameMessage);
-      gameMessage.textContent = '*** Round ' + roundCounter + ' ***'; // see roundCounter in loop after playRound
-      banner.appendChild(gameMessage);
-      console.log('You chose: ' + humanChoice + '; Computer chose: ' + computerChoice);
+      
+      displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
+      banner.appendChild(displayRound);
+      
+      displayChoices.textContent = 'You chose: ' + humanChoice + '; Computer chose: ' + computerChoice;
+      banner.appendChild(displayChoices);
+      
       if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
+        displayRoundWinner.textContent = "It's a tie!";
+        banner.appendChild(displayRoundWinner);
       } else if (humanChoice === 'rock') {
             if (computerChoice === 'paper') {
                 ++computerScore;
-                console.log("Paper beats rock. Computer wins!");
+                displayRoundWinner.textContent = "Paper beats rock. Computer wins!";
+                banner.appendChild(displayRoundWinner);
             } else if (computerChoice === 'scissors') {
                 ++humanScore;
-                console.log("Rock beats scissors. You win!");
+                displayRoundWinner.textContent = "Rock beats scissors. You win!";
+                banner.appendChild(displayRoundWinner);
             }   
       } else if (humanChoice === 'paper') {
             if (computerChoice === 'scissors') {
                 ++computerScore;
-                console.log("Scissors beats paper. Computer wins!");
+                displayRoundWinner.textContent = "Scissors beats paper. Computer wins!";
+                banner.appendChild(displayRoundWinner);
             } else if (computerChoice === 'rock') {
                 ++humanScore;
-                console.log("Paper beats rock. You win!");
+                displayRoundWinner.textContent = "Paper beats rock. You win!";
+                banner.appendChild(displayRoundWinner);
             }   
       } else if (humanChoice === 'scissors') {
             if (computerChoice === 'rock') {
                 ++computerScore;
-                console.log("Rock beats scissors. Computer wins!");
+                displayRoundWinner.textContent = "Rock beats scissors. Computer wins!";
+                banner.appendChild(displayRoundWinner);
             } else if (computerChoice === 'paper') {
                 ++humanScore;
-                console.log("Scissors beats paper. You win!");
+                displayRoundWinner.textContent = "Scissors beats paper. You win!";
+                banner.appendChild(displayRoundWinner);
             } 
       }
-      console.log('Score - You: ' + humanScore + ', Computer: ' + computerScore);
+      displayScore.textContent = 'Score - You: ' + humanScore + ', Computer: ' + computerScore;
+      banner.appendChild(displayScore);
     }  
  
     // These consts and playRound will be called from within playGame
@@ -83,24 +99,17 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     let humanChoice = button.id;
     let computerChoice = getComputerChoice();
-    alert('you: ' + humanChoice + ' | computer: ' + computerChoice);
-    // call function that plays game
-    playRound(humanChoice, computerChoice);
+    
+    playRound(humanChoice, computerChoice); // call function that plays game
     roundCounter++
     });
 });
 
 // First player to score 5 points wins
 
-let roundCounter = 1; // roundCounter displayed in playRound.
-//do  {
-//    roundCounter++; // this is the round counter
-//    playGame();
-//} while (humanScore < 5 && computerScore < 5)
-
-// Check to see who has the highest score then declare the winner.
-if (humanScore > computerScore) {
-    console.log('You win the game!');
+  if (humanScore > computerScore) {
+  console.log('You win the game!');
 } else {
-    console.log('The computer wins the game.');
-};  
+  console.log('The computer wins the game.');
+};
+// } while (humanScore < 5 && computerScore < 5);
