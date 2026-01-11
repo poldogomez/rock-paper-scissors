@@ -5,9 +5,9 @@ let humanScore = 0;
 // create banner to show round and keep score
 const banner = document.querySelector("#banner");
 
-const welcome = document.createElement("p");
-    welcome.textContent = "Hello World! It's time for Rock Paper Scissors!";
-banner.appendChild(welcome);
+const gameMessage = document.createElement("p");
+    gameMessage.textContent = "Hello World! It's time for Rock Paper Scissors!";
+banner.appendChild(gameMessage);
 
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
@@ -34,7 +34,9 @@ function getComputerChoice() {
 //function playGame() {
 // 
     function playRound(humanChoice, computerChoice) {
-      console.log('*** Round ' + roundCounter + ' ***'); // see roundCounter in loop after playRound
+      banner.removeChild(gameMessage);
+      gameMessage.textContent = '*** Round ' + roundCounter + ' ***'; // see roundCounter in loop after playRound
+      banner.appendChild(gameMessage);
       console.log('You chose: ' + humanChoice + '; Computer chose: ' + computerChoice);
       if (humanChoice === computerChoice) {
         console.log("It's a tie!");
