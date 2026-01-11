@@ -84,12 +84,13 @@ buttons.forEach((button) => {
     alert('you: ' + humanChoice + ' | computer: ' + computerChoice);
     // call function that plays game
     playRound(humanChoice, computerChoice);
+    roundCounter++
     });
 });
 
 // First player to score 5 points wins
 
-let roundCounter = 0; // roundCounter displayed in playRound.
+let roundCounter = 1; // roundCounter displayed in playRound.
 //do  {
 //    roundCounter++; // this is the round counter
 //    playGame();
