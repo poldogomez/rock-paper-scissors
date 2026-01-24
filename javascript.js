@@ -1,7 +1,7 @@
 // Declare player and computer score variables
 let computerScore = 0;
 let humanScore = 0;
-let roundCounter = 1; // roundCounter displayed in playRound.
+let roundCounter = 0; // roundCounter displayed in playRound.
 
 // create banner to show round and keep score
 const banner = document.querySelector("#banner");
@@ -33,11 +33,8 @@ function getComputerChoice() {
             break;
     }
     return computerChoice;
-}
+};
 
-
-//function playGame() {
-// 
     function playRound(humanChoice, computerChoice) {
       
       displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
@@ -82,7 +79,16 @@ function getComputerChoice() {
       }
       displayScore.textContent = 'Score - You: ' + humanScore + ', Computer: ' + computerScore;
       banner.appendChild(displayScore);
-    }  
+      
+      if (humanScore == 5 || computerScore == 5) {
+        if (humanScore > computerScore) {
+            alert('You win the game!');
+        } else {
+            alert('The computer wins the game.');
+        };
+        return;
+      };
+    };  
  
     // These consts and playRound will be called from within playGame
     // const humanSelection = humanChoice;
@@ -100,16 +106,16 @@ buttons.forEach((button) => {
     let humanChoice = button.id;
     let computerChoice = getComputerChoice();
     
+    roundCounter++;
     playRound(humanChoice, computerChoice); // call function that plays game
-    roundCounter++
     });
 });
 
 // First player to score 5 points wins
 
-  if (humanScore > computerScore) {
-  console.log('You win the game!');
-} else {
-  console.log('The computer wins the game.');
-};
+//   if (humanScore > computerScore) {
+//   console.log('You win the game!');
+// } else {
+//   console.log('The computer wins the game.');
+// };
 // } while (humanScore < 5 && computerScore < 5);
