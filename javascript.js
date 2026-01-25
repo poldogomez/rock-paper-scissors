@@ -37,6 +37,14 @@ function getComputerChoice() {
 
     function playRound(humanChoice, computerChoice) {
       
+      if (humanScore == 5 || computerScore == 5) {
+        if (humanScore > computerScore) {
+            alert('You win the game!');
+        } else {
+            alert('The computer wins the game.');
+        };
+      };
+
       displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
       banner.appendChild(displayRound);
       
@@ -80,14 +88,6 @@ function getComputerChoice() {
       displayScore.textContent = 'Score - You: ' + humanScore + ', Computer: ' + computerScore;
       banner.appendChild(displayScore);
       
-      if (humanScore == 5 || computerScore == 5) {
-        if (humanScore > computerScore) {
-            alert('You win the game!');
-        } else {
-            alert('The computer wins the game.');
-        };
-        return;
-      };
     };  
  
     // These consts and playRound will be called from within playGame
