@@ -7,8 +7,6 @@ let roundCounter = 0; // roundCounter displayed in playRound.
 const banner = document.querySelector("#banner");
 
 const displayRound = document.createElement("p");
-    displayRound.textContent = "Hello World! It's time for Rock Paper Scissors!";
-banner.appendChild(displayRound);
 
 const displayChoices = document.createElement("p");
 const displayRoundWinner = document.createElement("p");
@@ -38,10 +36,15 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
  
+    const h2Exist = document.querySelector('h2');
+    if (h2Exist) {
+        banner.removeChild(declareWinner);
+    };
+
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
-    displayChoices.textContent = 'You chose: ' + humanChoice + '; Computer chose: ' + computerChoice;
+    displayChoices.textContent = 'You chose: ' + humanChoice + ' | Computer chose: ' + computerChoice;
     banner.appendChild(displayChoices);
       
     if (humanChoice === computerChoice) {
@@ -71,9 +74,10 @@ function playRound(humanChoice, computerChoice) {
             displayRoundWinner.textContent = "Scissors beats paper. You win!";
         }; 
       };
+      
       banner.appendChild(displayRoundWinner);
 
-      displayScore.textContent = 'Score: You: ' + humanScore + '| Computer: ' + computerScore;
+      displayScore.textContent = 'Score: You: ' + humanScore + ' | Computer: ' + computerScore;
       banner.appendChild(displayScore);
       
     };  
@@ -99,10 +103,12 @@ buttons.forEach((button) => {
             // alert('The computer wins the game.');
         };
         banner.appendChild(declareWinner);
-        //roundCounter == 0;
-        //humanScore == 0;
-        //computerScore == 0;
-    };
+    
+        // reset score and counter
+        roundCounter = 0;
+        humanScore = 0;
+        computerScore = 0;
 
+        };
     });
 });
