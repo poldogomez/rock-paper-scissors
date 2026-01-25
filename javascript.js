@@ -37,18 +37,7 @@ function getComputerChoice() {
 };
 
 function playRound(humanChoice, computerChoice) {
-    // if (humanScore == 5 || computerScore == 5) {
-    //     if (humanScore > computerScore) {
-    //         declareWinner.textContent = "You win the game!";
-    //         banner.appendChild(declareWinner);
-    //         // alert('You win the game!');
-    //     } else {
-    //         declareWinner.textContent = "The computer wins the game!";
-    //         banner.appendChild(declareWinner);
-    //         // alert('The computer wins the game.');
-    //     };
-    // };
-
+ 
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
@@ -94,13 +83,6 @@ function playRound(humanChoice, computerChoice) {
       
     };  
  
-    // These consts and playRound will be called from within playGame
-    // const humanSelection = humanChoice;
-    // const computerSelection = getComputerChoice();
-
-//    playRound(humanChoice, computerSelection);
-// 
-// }
 
 // add listeners for container with buttons for humanChoice
 const buttons = document.querySelectorAll("button");

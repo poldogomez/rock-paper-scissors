@@ -1,0 +1,12 @@
+body,
+button {
+    font-family: Verdana, sans-serif;
+}
+
+button {
+    margin: 1em;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px lightslategrey;
+}
