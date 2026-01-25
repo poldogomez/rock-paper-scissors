@@ -13,6 +13,7 @@ banner.appendChild(displayRound);
 const displayChoices = document.createElement("p");
 const displayRoundWinner = document.createElement("p");
 const displayScore = document.createElement("p");
+const declareWinner = document.createElement("h2");
 
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
@@ -39,9 +40,13 @@ function getComputerChoice() {
       
       if (humanScore == 5 || computerScore == 5) {
         if (humanScore > computerScore) {
-            alert('You win the game!');
+            declareWinner.textContent = "You win the game!";
+            banner.appendChild(declareWinner);
+            // alert('You win the game!');
         } else {
-            alert('The computer wins the game.');
+            declareWinner.textContent = "The computer wins the game!";
+            banner.appendChild(declareWinner);
+            // alert('The computer wins the game.');
         };
       };
 
@@ -110,12 +115,3 @@ buttons.forEach((button) => {
     playRound(humanChoice, computerChoice); // call function that plays game
     });
 });
-
-// First player to score 5 points wins
-
-//   if (humanScore > computerScore) {
-//   console.log('You win the game!');
-// } else {
-//   console.log('The computer wins the game.');
-// };
-// } while (humanScore < 5 && computerScore < 5);
