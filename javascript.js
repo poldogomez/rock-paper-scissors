@@ -4,6 +4,16 @@ let humanScore = 0;
 let roundCounter = 0; // roundCounter displayed in playRound.
 
 // create banner to show round and keep score
+const heading = document.querySelector("#header");
+    
+    const displayTitle = document.createElement("h1");
+        displayTitle.textContent = "Rock Paper Scissor";
+    heading.appendChild(displayTitle);
+    
+    const instructions = document.createElement("p");
+        instructions.textContent = "Press a button to begin round."
+    heading.appendChild(instructions);
+
 const banner = document.querySelector("#banner");
 
 const displayRound = document.createElement("p");
