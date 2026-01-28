@@ -15,9 +15,7 @@ const heading = document.querySelector("#header");
     heading.appendChild(instructions);
 
 const banner = document.querySelector("#banner");
-
 const displayRound = document.createElement("p");
-
 const displayChoices = document.createElement("p");
 const displayRoundWinner = document.createElement("p");
 const displayScore = document.createElement("p");
@@ -91,7 +89,24 @@ function playRound(humanChoice, computerChoice) {
       banner.appendChild(displayScore);
       
     };  
- 
+
+const container = document.getElementById("container");
+
+const rockButton = document.createElement("button");
+    rockButton.textContent = "Rock";
+    rockButton.id = "rock";
+
+const paperButton = document.createElement("button");
+    paperButton.textContent = "Paper";
+    paperButton.id = "paper";
+
+const scissorsButton = document.createElement("button");
+    scissorsButton.textContent = "Scissors";
+    scissorsButton.id = "scissors";
+
+container.appendChild(rockButton);
+container.appendChild(paperButton);
+container.appendChild(scissorsButton);
 
 // add listeners for container with buttons for humanChoice
 const buttons = document.querySelectorAll("button");
