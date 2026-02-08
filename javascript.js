@@ -18,6 +18,8 @@ const banner = document.querySelector("#banner");
 const displayRound = document.createElement("p");
 const displayChoices = document.createElement("p");
 const displayRoundWinner = document.createElement("p");
+    displayRoundWinner.style.fontSize = "1.25em";
+    displayRoundWinner.style.fontWeight = "bold";
 const displayScore = document.createElement("p");
 const declareWinner = document.createElement("h2");
 
