@@ -1,6 +1,17 @@
+body {
+    background-color: royalblue;
+}
+
 body,
 button {
     font-family: Verdana, sans-serif;
+    color: white;
+}
+
+#game-container { 
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
 }
 
 button {
@@ -9,10 +20,12 @@ button {
     border-radius: 10px;
     border: none;
     box-shadow: 0 0 5px lightslategrey;
+    font-size: 1em;
     font-weight: bold;
+    background-color: orange;
 }
 
 button:hover {
-    background-color: orange;
-    color: white;
+    background-color: lime;
+    color: black;
 }
