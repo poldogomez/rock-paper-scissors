@@ -21,6 +21,12 @@ const displayRoundWinner = document.createElement("p");
     displayRoundWinner.style.fontSize = "1.25em";
     displayRoundWinner.style.fontWeight = "bold";
 const displayScore = document.createElement("p");
+    displayScore.style.backgroundColor = "white";
+    displayScore.style.color = "black";
+    displayScore.style.padding = "10px";
+    displayScore.style.margin = "1em 25%";
+    displayScore.style.borderRadius = "5px";
+    displayScore.style.fontWeight = "bold";
 const declareWinner = document.createElement("h2");
 
 // Logic to get computer choice
@@ -54,7 +60,7 @@ function playRound(humanChoice, computerChoice) {
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
-    displayChoices.textContent = 'You chose: ' + humanChoice + ' | Computer chose: ' + computerChoice;
+    displayChoices.textContent = 'You chose: ' + humanChoice + '  |  Computer chose: ' + computerChoice;
     banner.appendChild(displayChoices);
       
     if (humanChoice === computerChoice) {

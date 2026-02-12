@@ -1,5 +1,5 @@
 body {
-    background-color: royalblue;
+    background-color: rgb(104, 133, 221);
 }
 
 body,
@@ -9,9 +9,10 @@ button {
 }
 
 #game-container { 
-    margin: 20px auto;
+    margin: 5% auto 0 auto;
     padding: 20px;
     text-align: center;
+    width: 40%;
 }
 
 button {
@@ -19,10 +20,10 @@ button {
     padding: 0.5em 1em;
     border-radius: 10px;
     border: none;
-    box-shadow: 0 0 5px lightslategrey;
-    font-size: 1em;
-    font-weight: bold;
-    background-color: orange;
+    box-shadow: 0 0 5px black;
+    font-size: 1.25em;
+    font-weight: 900;
+    background-color: lightslategray;
 }
 
 button:hover {
