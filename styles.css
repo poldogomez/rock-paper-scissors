@@ -37,12 +37,13 @@ button:hover {
     background-color: white;
     color: black;
     padding: 10px;
-    margin: 1em 25%;
-    border-radius: 5px;
+    margin: 1em 25% 1.5em 25%;
+    border-radius: 15px;
     font-weight: bold;
 }
 
 #declare-winner {
     font-size: 1.5em;
     font-weight: bold;
+    text-shadow: 0 0 20px #fff;
 }
