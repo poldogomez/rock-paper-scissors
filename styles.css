@@ -1,9 +1,6 @@
-body {
-    background-color: rgb(104, 133, 221);
-}
-
 body,
 button {
+    background-color: rgb(104, 133, 221);
     font-family: Verdana, sans-serif;
     color: white;
 }
@@ -18,12 +15,12 @@ button {
 button {
     margin: 1em;
     padding: 0.5em 1em;
-    border-radius: 10px;
-    border: none;
+    border-radius: 15px;
+    border: solid 3px white;
     box-shadow: 0 0 5px black;
     font-size: 1.25em;
     font-weight: 900;
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
 }
 
 button:hover {
