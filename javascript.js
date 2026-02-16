@@ -18,17 +18,11 @@ const banner = document.querySelector("#banner");
 const displayRound = document.createElement("p");
 const displayChoices = document.createElement("p");
 const displayRoundWinner = document.createElement("p");
-    displayRoundWinner.style.fontSize = "1.25em";
-    displayRoundWinner.style.fontWeight = "bold";
+    displayRoundWinner.id = "round-winner";
 const displayScore = document.createElement("p");
-    displayScore.style.backgroundColor = "white";
-    displayScore.style.color = "black";
-    displayScore.style.padding = "10px";
-    displayScore.style.margin = "1em 25%";
-    displayScore.style.borderRadius = "5px";
-    displayScore.style.fontWeight = "bold";
-const declareWinner = document.createElement("h2");
-
+    displayScore.id = "display-score";
+const declareWinner = document.createElement("span");
+    declareWinner.id = "declare-winner";
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
@@ -52,8 +46,8 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
  
-    const h2Exist = document.querySelector('h2');
-    if (h2Exist) {
+    const spanExist = document.querySelector('span');
+    if (spanExist) {
         banner.removeChild(declareWinner);
     };
 
