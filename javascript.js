@@ -23,6 +23,10 @@ const displayScore = document.createElement("p");
     displayScore.id = "display-score";
 const declareWinner = document.createElement("span");
     declareWinner.id = "declare-winner";
+
+const resetButton = document.createElement("button");
+    resetButton.textContent = "Reset";
+    resetButton.id = "reset";
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
@@ -49,6 +53,7 @@ function playRound(humanChoice, computerChoice) {
     const spanExist = document.querySelector('span');
     if (spanExist) {
         banner.removeChild(declareWinner);
+        banner.removeChild(resetButton);
     };
 
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
@@ -130,7 +135,12 @@ buttons.forEach((button) => {
             // alert('The computer wins the game.');
         };
         banner.appendChild(declareWinner);
-    
+        
+        // const resetButton = document.createElement("button");
+        //     resetButton.textContent = "Reset";
+        //     resetButton.id = "reset";
+        banner.appendChild(resetButton);
+        
         // reset score and counter
         roundCounter = 0;
         humanScore = 0;
