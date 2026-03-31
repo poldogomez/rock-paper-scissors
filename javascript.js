@@ -27,6 +27,7 @@ const declareWinner = document.createElement("span");
 const resetButton = document.createElement("button");
     resetButton.textContent = "Reset";
     resetButton.id = "reset";
+
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
@@ -135,10 +136,7 @@ buttons.forEach((button) => {
             // alert('The computer wins the game.');
         };
         banner.appendChild(declareWinner);
-        
-        // const resetButton = document.createElement("button");
-        //     resetButton.textContent = "Reset";
-        //     resetButton.id = "reset";
+                
         banner.appendChild(resetButton);
         
         // reset score and counter
