@@ -54,7 +54,7 @@ function playRound(humanChoice, computerChoice) {
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
-    displayChoices.textContent = 'You chose: ' + humanChoice + '  |  Computer chose: ' + computerChoice;
+    displayChoices.textContent = 'You chose: ' + humanChoice + '   |   Computer chose: ' + computerChoice;
     banner.appendChild(displayChoices);
       
     if (humanChoice === computerChoice) {
@@ -87,7 +87,7 @@ function playRound(humanChoice, computerChoice) {
       
       banner.appendChild(displayRoundWinner);
 
-      displayScore.textContent = 'Score: You: ' + humanScore + ' | Computer: ' + computerScore;
+      displayScore.textContent = 'Score: You: ' + humanScore + '   |   Computer: ' + computerScore;
       banner.appendChild(displayScore);
       
     };  
