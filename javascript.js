@@ -124,13 +124,14 @@ buttons.forEach((button) => {
         const spanExist = document.querySelector('span');
         if (spanExist) {
             banner.removeChild(declareWinner);
+            // reset instructions
+            instructions.textContent = "Press a button to begin round."
+            heading.appendChild(instructions);
+            
             // reset buttons
             rockButton.disabled = false;
             paperButton.disabled = false;
             scissorsButton.disabled = false;
-            // new instructions
-            instructions.textContent = 'Press "Reset" to begin round.';
-            heading.appendChild(instructions);
         };
         roundCounter = 0;
         humanScore = 0;
@@ -156,10 +157,16 @@ buttons.forEach((button) => {
         };
 
         banner.appendChild(declareWinner);
+ 
         // disable game buttons
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
+        // new instructions
+ 
+        instructions.textContent = 'Press "Reset" to start over.';
+        heading.appendChild(instructions);
+        
         };
     });
 });
