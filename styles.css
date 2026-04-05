@@ -29,6 +29,12 @@ button:hover {
     cursor: pointer;
 }
 
+button:disabled {
+    background-color: grey;
+    color: black;
+    cursor: not-allowed;
+}
+
 #declare-winner {
     font-size: 1.25em;
     background-color: white;
