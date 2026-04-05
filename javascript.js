@@ -24,10 +24,6 @@ const displayScore = document.createElement("p");
 const declareWinner = document.createElement("span");
     declareWinner.id = "declare-winner";
 
-const resetButton = document.createElement("button");
-    resetButton.textContent = "Reset";
-    resetButton.id = "reset";
-
 // Logic to get computer choice
 // Choices are: 1 = "rock", 2 = "paper", 3 = "scissors"
 // Store result in computerChoice
@@ -51,12 +47,6 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
  
-    const spanExist = document.querySelector('span');
-    if (spanExist) {
-        banner.removeChild(declareWinner);
-        banner.removeChild(resetButton);
-    };
-
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
@@ -112,9 +102,14 @@ const scissorsButton = document.createElement("button");
     scissorsButton.textContent = "Scissors";
     scissorsButton.id = "scissors";
 
+const resetButton = document.createElement("button");
+    resetButton.textContent = "Reset";
+    resetButton.id = "reset";
+
 container.appendChild(rockButton);
 container.appendChild(paperButton);
 container.appendChild(scissorsButton);
+container.appendChild(resetButton);
 
 // add listeners for container with buttons for humanChoice
 const buttons = document.querySelectorAll("button");
@@ -122,6 +117,21 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     let humanChoice = button.id;
+    
+    // check if reset button was pressed
+    if (humanChoice === "reset") {
+        // reset score and counter
+        const spanExist = document.querySelector('span');
+        if (spanExist) {
+            banner.removeChild(declareWinner);
+        };
+        roundCounter = 0;
+        humanScore = 0;
+        computerScore = 0;
+        banner.replaceChildren();
+        return;
+    };
+    
     let computerChoice = getComputerChoice();
     
     roundCounter++;
@@ -135,15 +145,9 @@ buttons.forEach((button) => {
             declareWinner.textContent = "The computer wins the game!";
             // alert('The computer wins the game.');
         };
+
         banner.appendChild(declareWinner);
                 
-        banner.appendChild(resetButton);
-        
-        // reset score and counter
-        roundCounter = 0;
-        humanScore = 0;
-        computerScore = 0;
-
         };
     });
 });
