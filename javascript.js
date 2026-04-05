@@ -50,7 +50,7 @@ function playRound(humanChoice, computerChoice) {
     displayRound.textContent = 'Round ' + roundCounter; // see roundCounter in loop after playRound
     banner.appendChild(displayRound);
       
-    displayChoices.textContent = 'You chose: ' + humanChoice + '   |   Computer chose: ' + computerChoice;
+    displayChoices.textContent = 'You chose: ' + humanChoice + ' | Computer chose: ' + computerChoice;
     banner.appendChild(displayChoices);
       
     if (humanChoice === computerChoice) {
@@ -83,7 +83,7 @@ function playRound(humanChoice, computerChoice) {
       
       banner.appendChild(displayRoundWinner);
 
-      displayScore.textContent = 'Score: You: ' + humanScore + '   |   Computer: ' + computerScore;
+      displayScore.textContent = 'Score: You: ' + humanScore + ' | Computer: ' + computerScore;
       banner.appendChild(displayScore);
       
     };  
@@ -124,10 +124,19 @@ buttons.forEach((button) => {
         const spanExist = document.querySelector('span');
         if (spanExist) {
             banner.removeChild(declareWinner);
+            // reset buttons
+            rockButton.disabled = false;
+            paperButton.disabled = false;
+            scissorsButton.disabled = false;
+            // new instructions
+            instructions.textContent = 'Press "Reset" to begin round.';
+            heading.appendChild(instructions);
         };
         roundCounter = 0;
         humanScore = 0;
         computerScore = 0;
+        
+        // remove banner items
         banner.replaceChildren();
         return;
     };
@@ -147,7 +156,10 @@ buttons.forEach((button) => {
         };
 
         banner.appendChild(declareWinner);
-                
+        // disable game buttons
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
         };
     });
 });
