@@ -31,7 +31,8 @@ button:hover {
 
 button:disabled {
     background-color: grey;
-    color: black;
+    border: solid 3px grey;
+    color: white;
     cursor: not-allowed;
 }
 
